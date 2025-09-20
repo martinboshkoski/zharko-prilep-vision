@@ -24,11 +24,12 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: 'hero', label: 'Почеток' },
-    { id: 'ai-project', label: 'АИ Советник' },
-    { id: 'projects', label: 'Проекти' },
-    { id: 'about', label: 'За кандидатот' },
-    { id: 'contact', label: 'Контакт' },
+    { id: 'hero', label: 'Почеток', type: 'scroll' },
+    { id: 'ai-project', label: 'АИ Советник', type: 'scroll' },
+    { id: 'projects', label: 'Проекти', type: 'scroll' },
+    { id: 'about', label: 'За кандидатот', type: 'scroll' },
+    { id: 'blog', label: 'Блог', type: 'link', href: '/blog' },
+    { id: 'contact', label: 'Контакт', type: 'scroll' },
   ];
 
   return (
@@ -52,13 +53,23 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
-              >
-                {item.label}
-              </button>
+              item.type === 'link' ? (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                >
+                  {item.label}
+                </button>
+              )
             ))}
           </nav>
 
@@ -83,13 +94,24 @@ const Header = () => {
         <div className="md:hidden bg-white border-t border-border">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-secondary transition-colors duration-200 w-full text-left"
-              >
-                {item.label}
-              </button>
+              item.type === 'link' ? (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-secondary transition-colors duration-200 w-full text-left"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-secondary transition-colors duration-200 w-full text-left"
+                >
+                  {item.label}
+                </button>
+              )
             ))}
           </div>
         </div>
