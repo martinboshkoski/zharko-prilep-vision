@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import ldpLogo from '@/assets/ldp-logo.png';
+import ldpLogo from '@/assets/ldp-logo-transparent.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

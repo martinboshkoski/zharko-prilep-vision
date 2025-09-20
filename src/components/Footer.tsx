@@ -1,4 +1,4 @@
-import ldpLogo from '@/assets/ldp-logo.png';
+import ldpLogo from '@/assets/ldp-logo-transparent.png';
 
 const Footer = () => {
   return (
