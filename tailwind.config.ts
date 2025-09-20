@@ -47,6 +47,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Campaign-specific colors
+        campaign: {
+          blue: "hsl(var(--campaign-blue))",
+          "blue-dark": "hsl(var(--campaign-blue-dark))",
+          "blue-light": "hsl(var(--campaign-blue-light))",
+          yellow: "hsl(var(--campaign-yellow))",
+          "yellow-dark": "hsl(var(--campaign-yellow-dark))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
