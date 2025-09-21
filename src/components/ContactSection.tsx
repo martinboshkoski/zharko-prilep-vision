@@ -14,12 +14,12 @@ const ContactSection = () => {
       value: "zharko@zharkozaprilep.mk",
       href: "mailto:zharko@zharkozaprilep.mk"
     },
-    {
-      icon: Globe,
-      label: "Веб-страница",
-      value: "zharkozaprilep.mk",
-      href: "https://zharkozaprilep.mk"
-    }
+    // {
+    //   icon: Globe,
+    //   label: "Веб-страница",
+    //   value: "zharkozaprilep.mk",
+    //   href: "https://zharkozaprilep.mk"
+    // }
   ];
 
   return (

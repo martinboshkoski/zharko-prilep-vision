@@ -27,7 +27,7 @@ const Footer = () => {
           
           {/* Copyright */}
           <div className="text-center text-sm text-background/60">
-            <p>© 2024 Жарко Бошкоски. Сите права се задржани.</p>
+            <p>© 2025 Жарко Бошкоски. Сите права се задржани.</p>
             <p className="mt-1">Либерална Демократска Партија - ЛДП</p>
           </div>
         </div>
