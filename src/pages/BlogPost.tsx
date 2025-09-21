@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, User } from 'lucide-react';
+import { Calendar, User, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-// Sample blog posts data
+// Sample blog posts data (same as in Blog.tsx)
 const blogPosts = [
   {
     id: 1,
@@ -61,91 +61,131 @@ const blogPosts = [
   }
 ];
 
-const Blog = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
-  const categories = Array.from(new Set(blogPosts.map(post => post.category)));
+const BlogPost = () => {
+  const { slug } = useParams<{ slug: string }>();
   
-  const filteredPosts = selectedCategory 
-    ? blogPosts.filter(post => post.category === selectedCategory)
-    : blogPosts;
+  const post = blogPosts.find(p => p.slug === slug);
+
+  // SEO Meta tags for social sharing
+  useEffect(() => {
+    if (post) {
+      // Update page title
+      document.title = `${post.title} - Жарко Бошкоски`;
+      
+      // Create or update meta tags
+      const updateMetaTag = (property: string, content: string) => {
+        let meta = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement;
+        if (!meta) {
+          meta = document.createElement('meta');
+          meta.setAttribute('property', property);
+          document.head.appendChild(meta);
+        }
+        meta.content = content;
+      };
+
+      const updateNameMetaTag = (name: string, content: string) => {
+        let meta = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
+        if (!meta) {
+          meta = document.createElement('meta');
+          meta.setAttribute('name', name);
+          document.head.appendChild(meta);
+        }
+        meta.content = content;
+      };
+
+      // Open Graph tags for Facebook
+      updateMetaTag('og:title', post.title);
+      updateMetaTag('og:description', post.excerpt);
+      updateMetaTag('og:image', post.image);
+      updateMetaTag('og:url', window.location.href);
+      updateMetaTag('og:type', 'article');
+      updateMetaTag('og:site_name', 'Жарко Бошкоски - Кандидат за градоначалник');
+
+      // Twitter Card tags
+      updateNameMetaTag('twitter:card', 'summary_large_image');
+      updateNameMetaTag('twitter:title', post.title);
+      updateNameMetaTag('twitter:description', post.excerpt);
+      updateNameMetaTag('twitter:image', post.image);
+
+      // Additional meta tags
+      updateNameMetaTag('description', post.excerpt);
+      updateNameMetaTag('author', post.author);
+      updateNameMetaTag('keywords', `${post.category}, Прилеп, Жарко Бошкоски, локални избори`);
+    }
+
+    return () => {
+      // Reset title when component unmounts
+      document.title = 'Жарко Бошкоски - Кандидат за градоначалник на Град Прилеп';
+    };
+  }, [post]);
+
+  if (!post) {
+    return <Navigate to="/blog" replace />;
+  }
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-campaign-blue mb-4">
-              Блог
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Најнови вести, проекти и размислувања за иднината на Прилеп
-            </p>
+        <div className="container mx-auto px-4 max-w-4xl">
+          {/* Back button */}
+          <Link 
+            to="/blog" 
+            className="inline-flex items-center gap-2 text-campaign-blue hover:text-campaign-blue-dark mb-8 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Назад кон блог
+          </Link>
+
+          {/* Hero Image */}
+          <div className="aspect-video overflow-hidden rounded-lg mb-8">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap gap-2 justify-center mb-8">
-            <Badge 
-              variant={selectedCategory === null ? "default" : "outline"}
-              className="cursor-pointer hover:bg-campaign-blue-light transition-colors"
-              onClick={() => setSelectedCategory(null)}
-            >
-              Сите
+          {/* Post Header */}
+          <header className="mb-8">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+              <Calendar className="w-4 h-4" />
+              <span>{new Date(post.date).toLocaleDateString('mk-MK')}</span>
+              <User className="w-4 h-4 ml-2" />
+              <span>{post.author}</span>
+            </div>
+            
+            <Badge variant="outline" className="mb-4">
+              {post.category}
             </Badge>
-            {categories.map(category => (
-              <Badge 
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                className="cursor-pointer hover:bg-campaign-blue-light transition-colors"
-                onClick={() => setSelectedCategory(category)}
-              >
-                {category}
-              </Badge>
-            ))}
-          </div>
+            
+            <h1 className="text-3xl md:text-4xl font-bold text-campaign-blue mb-4">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              {post.excerpt}
+            </p>
+          </header>
 
-          {/* Blog Posts */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map(post => (
-              <Link key={post.id} to={`/blog/${post.slug}`}>
-                <Card className="hover:shadow-lg transition-shadow duration-300">
-                <div className="aspect-video overflow-hidden rounded-t-lg">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                    <Calendar className="w-4 h-4" />
-                    <span>{new Date(post.date).toLocaleDateString('mk-MK')}</span>
-                    <User className="w-4 h-4 ml-2" />
-                    <span>{post.author}</span>
-                  </div>
-                  <Badge variant="outline" className="w-fit mb-2">
-                    {post.category}
-                  </Badge>
-                  <CardTitle className="text-campaign-blue hover:text-campaign-blue-dark transition-colors">
-                    {post.title}
-                  </CardTitle>
-                  <CardDescription>
-                    {post.excerpt}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-sm text-muted-foreground line-clamp-4">
-                    {post.content.split('\n\n')[0]}...
-                  </div>
-                  <div className="mt-4 text-campaign-blue hover:text-campaign-blue-dark font-semibold transition-colors">
-                    Прочитај повеќе →
-                  </div>
-                </CardContent>
-                </Card>
-              </Link>
+          {/* Post Content */}
+          <article className="prose prose-lg max-w-none">
+            {post.content.split('\n\n').map((paragraph, index) => (
+              <p key={index} className="mb-6 text-foreground leading-relaxed">
+                {paragraph}
+              </p>
             ))}
+          </article>
+
+          {/* Share buttons or related content could go here */}
+          <div className="mt-12 pt-8 border-t">
+            <Link 
+              to="/blog" 
+              className="inline-flex items-center gap-2 text-campaign-blue hover:text-campaign-blue-dark transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Назад кон сите блог објави
+            </Link>
           </div>
         </div>
       </main>
@@ -154,4 +194,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogPost;
