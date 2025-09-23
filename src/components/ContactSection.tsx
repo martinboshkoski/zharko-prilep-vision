@@ -11,8 +11,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Е-пошта",
-      value: "zharko@zharkozaprilep.mk",
-      href: "mailto:zharko@zharkozaprilep.mk"
+      value: "zarkoboskoski@gmail.com",
+      href: "mailto:zarkoboskoski@gmail.com"
     },
     // {
     //   icon: Globe,
@@ -30,7 +30,7 @@ const ContactSection = () => {
             Контакт
           </h2>
           <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
-            Контактирајте не за прашања, предлози или поддршка
+            Граѓаните на Прилеп можат да ме контактираат за нови идеи, иницијативи и проблеми
           </p>
         </div>
 
