@@ -34,7 +34,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {contactInfo.map((contact, index) => {
             const Icon = contact.icon;
             return (
