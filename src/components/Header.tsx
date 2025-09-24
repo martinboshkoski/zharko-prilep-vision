@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import ldpLogo from '@/assets/ldp-logo-transparent.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +19,24 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+    setIsMenuOpen(false);
+    
+    // If we're not on the homepage, navigate there first
+    if (location.pathname !== '/') {
+      navigate('/', { replace: true });
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // We're already on homepage, just scroll
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -43,12 +59,13 @@ const Header = () => {
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img
-              src={ldpLogo}
-              alt="ЛДП - Либерална Демократска Партија"
-              className="h-10 lg:h-12 w-auto cursor-pointer"
-              onClick={() => scrollToSection('hero')}
-            />
+            <Link to="/">
+              <img
+                src={ldpLogo}
+                alt="ЛДП - Либерална Демократска Партија"
+                className="h-10 lg:h-12 w-auto cursor-pointer"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
