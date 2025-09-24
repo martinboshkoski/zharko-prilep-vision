@@ -1,4 +1,13 @@
 // Centralized blog posts data
+import riverEmbankmentTrack from "../assets/river-embankment-track.png";
+import aiAdvisorGovernment from "../assets/ai-advisor-government.jpg";
+import footballFieldModern from "../assets/football-field-modern.jpg";
+import startupHubSpace from "../assets/startup-hub-space.jpg";
+import youthParkModern from "../assets/youth-park-modern.jpg";
+import greenCityCleanAir from "../assets/green-city-clean-air.jpg";
+import bicycleLanesCity from "../assets/bicycle-lanes-city.jpg";
+import outdoorTheaterTowers from "../assets/outdoor-theater-towers.jpg";
+
 export const blogPosts = [
   {
     id: 1,
@@ -13,7 +22,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Екологија",
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=400&fit=crop"
+    image: greenCityCleanAir
   },
   {
     id: 2,
@@ -28,7 +37,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Технологија",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=400&fit=crop"
+    image: aiAdvisorGovernment
   },
   {
     id: 3,
@@ -58,7 +67,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Младински програми",
-    image: "https://images.pexels.com/photos/2128220/pexels-photo-2128220.jpeg"
+    image: footballFieldModern
   },
   {
     id: 5,
@@ -73,7 +82,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Претприемништво",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=400&fit=crop"
+    image: startupHubSpace
   },
   {
     id: 6,
@@ -88,7 +97,7 @@ export const blogPosts = [
     date: "2025-09-29", 
     author: "Жарко Бошкоски",
     category: "Транспорт",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop"
+    image: bicycleLanesCity
   },
    {
     id: 8,
@@ -103,7 +112,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Култура",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=400&fit=crop"
+    image: outdoorTheaterTowers
   },
   {
     id: 9,
@@ -163,7 +172,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Спорт",
-    image: "/src/assets/river-embankment-track.png"
+    image: riverEmbankmentTrack
   },
   {
     id: 13,
@@ -178,7 +187,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Урбанизам",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=400&fit=crop"
+    image: youthParkModern
   },
   {
     id: 14,
