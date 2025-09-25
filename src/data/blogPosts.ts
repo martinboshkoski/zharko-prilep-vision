@@ -13,7 +13,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Екологија",
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=400&fit=crop"
+    image: "/images/green-city-clean-air.jpg"
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Технологија",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=400&fit=crop"
+    image: "/images/ai-advisor-government.jpg"
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Младински програми",
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=400&fit=crop"
+    image: "/images/youth-park-modern.jpg"
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Младински програми",
-    image: "https://images.pexels.com/photos/2128220/pexels-photo-2128220.jpeg"
+    image: "/images/football-field-modern.jpg"
   },
   {
     id: 5,
@@ -73,7 +73,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Претприемништво",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=400&fit=crop"
+    image: "/images/startup-hub-space.jpg"
   },
   {
     id: 6,
@@ -88,7 +88,7 @@ export const blogPosts = [
     date: "2025-09-29", 
     author: "Жарко Бошкоски",
     category: "Транспорт",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop"
+    image: "/images/bicycle-lanes-city.jpg"
   },
    {
     id: 8,
@@ -103,7 +103,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Култура",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=400&fit=crop"
+    image: "/images/outdoor-theater-towers.jpg"
   },
   {
     id: 9,
@@ -118,7 +118,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Технологија",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=400&fit=crop"
+    image: "/images/ai-advisor-government.jpg"
   },
   {
     id: 10,
@@ -133,7 +133,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Екологија",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=400&fit=crop"
+    image: "/images/green-city-clean-air.jpg"
   },
   {
     id: 11,
@@ -148,7 +148,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Урбанизам",
-    image: "https://images.unsplash.com/photo-1583337130417-3346a1af7d2f?w=800&h=400&fit=crop"
+    image: "/images/youth-park-modern.jpg"
   },
   {
     id: 12,
@@ -163,7 +163,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Образование",
-    image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=800&h=400&fit=crop"
+    image: "/images/river-embankment-track.png"
   },
   {
     id: 13,
@@ -178,7 +178,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Урбанизам",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=400&fit=crop"
+    image: "/images/youth-park-modern.jpg"
   },
   {
     id: 14,
@@ -193,7 +193,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Претприемништво",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=400&fit=crop"
+    image: "/images/startup-hub-space.jpg"
   },
   {
     id: 15,
@@ -208,7 +208,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Спорт",
-    image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=800&h=400&fit=crop"
+    image: "/images/football-field-modern.jpg"
   }
 
 ];
