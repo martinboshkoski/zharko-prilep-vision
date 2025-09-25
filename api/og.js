@@ -12,7 +12,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Екологија",
-      "image": "/src/assets/green-city-clean-air.jpg"
+      "image": "/images/green-city-clean-air.jpg"
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Технологија",
-      "image": "/src/assets/ai-advisor-government.jpg"
+      "image": "/images/ai-advisor-government.jpg"
     },
     {
       "id": 3,
@@ -32,7 +32,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Младински програми",
-      "image": "/src/assets/youth-park-modern.jpg"
+      "image": "/images/youth-park-modern.jpg"
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Младински програми",
-      "image": "/src/assets/football-field-modern.jpg"
+      "image": "/images/football-field-modern.jpg"
     },
     {
       "id": 5,
@@ -52,7 +52,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Претприемништво",
-      "image": "/src/assets/startup-hub-space.jpg"
+      "image": "/images/startup-hub-space.jpg"
     },
     {
       "id": 6,
@@ -62,7 +62,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Транспорт",
-      "image": "/src/assets/bicycle-lanes-city.jpg"
+      "image": "/images/bicycle-lanes-city.jpg"
     },
     {
       "id": 8,
@@ -72,7 +72,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Култура",
-      "image": "/src/assets/outdoor-theater-towers.jpg"
+      "image": "/images/outdoor-theater-towers.jpg"
     },
     {
       "id": 12,
@@ -82,7 +82,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Спорт",
-      "image": "/src/assets/river-embankment-track.png"
+      "image": "/images/river-embankment-track.png"
     }
   ];
   
