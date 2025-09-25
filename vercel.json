@@ -1,0 +1,35 @@
+{
+  "functions": {
+    "api/og.js": {
+      "runtime": "edge"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/blog/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|Slackbot|SkypeUriPreview|facebookcatalog).*"
+        }
+      ],
+      "destination": "/api/og?slug=:slug"
+    },
+    { 
+      "source": "/(.*)", 
+      "destination": "/index.html" 
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/og",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400"
+        }
+      ]
+    }
+  ]
+}
