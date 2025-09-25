@@ -16,7 +16,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Екологија",
-      "image": "/images/green-city-clean-air.jpg"
+      "image": "/images/green-air-monitoring.jpg"
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Технологија",
-      "image": "/images/ai-advisor-government.jpg"
+      "image": "/images/ai-government-digital.jpg"
     },
     {
       "id": 3,
@@ -36,7 +36,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Младински програми",
-      "image": "/images/youth-park-modern.jpg"
+      "image": "/images/youth-driving-program.jpg"
     },
     {
       "id": 4,
@@ -46,7 +46,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Младински програми",
-      "image": "/images/football-field-modern.jpg"
+      "image": "/images/football-youth-field.jpg"
     },
     {
       "id": 5,
