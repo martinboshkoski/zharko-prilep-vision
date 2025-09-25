@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/og.js": {
-      "runtime": "edge"
+      "runtime": "@vercel/edge"
     }
   },
   "rewrites": [

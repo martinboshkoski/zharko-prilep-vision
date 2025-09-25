@@ -93,7 +93,7 @@ export default function handler(request) {
     return new Response('Post not found', { status: 404 });
   }
 
-  const baseUrl = 'https://zharko-prilep-vision.lovable.app';
+  const baseUrl = 'https://zharko-prilep-vision.vercel.app';
   const imageUrl = post.image.startsWith('http') ? post.image : `${baseUrl}${post.image}`;
   const postUrl = `${baseUrl}/blog/${post.slug}`;
 
