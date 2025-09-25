@@ -42,7 +42,7 @@ const BlogPost = () => {
       // Open Graph tags for Facebook
       updateMetaTag('og:title', post.title);
       updateMetaTag('og:description', post.excerpt);
-      updateMetaTag('og:image', post.image);
+      updateMetaTag('og:image', `${window.location.origin}${post.image}`);
       updateMetaTag('og:url', window.location.href);
       updateMetaTag('og:type', 'article');
       updateMetaTag('og:site_name', 'Жарко Бошкоски - Кандидат за градоначалник');
@@ -51,7 +51,7 @@ const BlogPost = () => {
       updateNameMetaTag('twitter:card', 'summary_large_image');
       updateNameMetaTag('twitter:title', post.title);
       updateNameMetaTag('twitter:description', post.excerpt);
-      updateNameMetaTag('twitter:image', post.image);
+      updateNameMetaTag('twitter:image', `${window.location.origin}${post.image}`);
 
       // Additional meta tags
       updateNameMetaTag('description', post.excerpt);
