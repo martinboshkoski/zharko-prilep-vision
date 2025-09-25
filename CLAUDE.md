@@ -1,3 +1,7 @@
+<!-- always push with 
+ cd "/Users/martinboshkoski/Desktop/ZB website/zharko-prilep-vision"
+  git push -->
+
 # Zharko Prilep Vision - Project Documentation
 
 ## Project Overview
