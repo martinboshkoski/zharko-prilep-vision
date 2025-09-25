@@ -10,10 +10,19 @@ import { blogPosts } from '@/data/blogPosts';
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const categories = Array.from(new Set(blogPosts.map(post => post.category)));
-  
+  // Extract all categories from both single category and categories array
+  const categories = Array.from(new Set(
+    blogPosts.flatMap(post =>
+      post.categories ? post.categories : [post.category]
+    ).filter(Boolean)
+  ));
+
   const filteredPosts = selectedCategory
-    ? blogPosts.filter(post => post.category === selectedCategory)
+    ? blogPosts.filter(post =>
+        post.categories
+          ? post.categories.includes(selectedCategory)
+          : post.category === selectedCategory
+      )
     : blogPosts;
 
   return (
@@ -83,7 +92,11 @@ const Blog = () => {
                       <span>{post.author}</span>
                     </div>
                     
-                    <Badge className="w-fit mb-2">{post.category}</Badge>
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      {(post.categories || [post.category]).map((cat, index) => (
+                        <Badge key={index} className="w-fit">{cat}</Badge>
+                      ))}
+                    </div>
                     
                     <CardTitle className="text-campaign-blue hover:text-campaign-blue-dark transition-colors">
                       {post.title}
