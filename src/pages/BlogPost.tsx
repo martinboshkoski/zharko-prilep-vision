@@ -80,7 +80,7 @@ const BlogPost = () => {
             className="inline-flex items-center gap-2 text-campaign-blue hover:text-campaign-blue-dark mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            Назад кон блог
+            Назад кон проекти
           </Link>
 
           {/* Hero Image */}
@@ -153,7 +153,7 @@ const BlogPost = () => {
               className="inline-flex items-center gap-2 px-6 py-3 bg-campaign-blue text-white rounded-lg hover:bg-campaign-blue-dark transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              Назад кон сите блогови
+              Назад кон сите проекти
             </Link>
           </div>
         </div>

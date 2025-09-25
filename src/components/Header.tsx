@@ -43,9 +43,8 @@ const Header = () => {
   const navItems = [
     { id: 'hero', label: 'Почеток', type: 'scroll' },
     { id: 'ai-project', label: 'АИ Советник', type: 'scroll' },
-    { id: 'projects', label: 'Проекти', type: 'scroll' },
     { id: 'about', label: 'За кандидатот', type: 'scroll' },
-    { id: 'blog', label: 'Блог', type: 'link', href: '/blog' },
+    { id: 'blog', label: 'Проекти', type: 'link', href: '/blog' },
     { id: 'contact', label: 'Контакт', type: 'scroll' },
   ];
 

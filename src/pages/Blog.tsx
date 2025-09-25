@@ -24,10 +24,10 @@ const Blog = () => {
       <section className="pt-24 pb-16 bg-gradient-to-b from-campaign-blue/5 to-transparent">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-campaign-blue mb-6">
-            Блог
+            Проекти
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Актуелни вести, планови и визии за развој на Прилеп. Следете ги најновите информации од нашата кампања.
+            Актуелни проекти, планови и визии за развој на Прилеп. Следете ги најновите информации од нашата кампања.
           </p>
         </div>
       </section>
