@@ -1,3 +1,7 @@
+export const config = {
+  runtime: 'edge',
+}
+
 export default function handler(request) {
   const { searchParams } = new URL(request.url);
   const slug = searchParams.get('slug');
