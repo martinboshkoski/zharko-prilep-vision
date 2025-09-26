@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,33 +7,8 @@ import { Calendar, User } from 'lucide-react';
 import { blogPosts } from '@/data/blogPosts';
 
 const Blog = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
-  // Extract all categories from both single category and categories array
-  const categories = Array.from(new Set(
-    blogPosts
-      .filter(post => post && (post.categories || post.category)) // Filter out undefined/null posts
-      .flatMap(post => {
-        if (post.categories && Array.isArray(post.categories)) {
-          return post.categories;
-        } else if (post.category) {
-          return [post.category];
-        }
-        return [];
-      }).filter(Boolean)
-  ));
-
-  const filteredPosts = selectedCategory
-    ? blogPosts.filter(post => {
-        if (!post) return false; // Filter out undefined/null posts
-        if (post.categories && Array.isArray(post.categories)) {
-          return post.categories.includes(selectedCategory);
-        } else if (post.category) {
-          return post.category === selectedCategory;
-        }
-        return false;
-      })
-    : blogPosts.filter(post => post); // Filter out undefined/null posts
+  // Filter out undefined/null posts
+  const filteredPosts = blogPosts.filter(post => post);
 
   return (
     <div className="min-h-screen bg-background">
@@ -55,32 +29,6 @@ const Blog = () => {
       {/* Blog Content */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          {/* Category Filter */}
-          <div className="flex flex-wrap gap-2 mb-8 justify-center">
-            <button
-              onClick={() => setSelectedCategory(null)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                !selectedCategory
-                  ? 'bg-campaign-blue text-white'
-                  : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
-              }`}
-            >
-              Сите категории
-            </button>
-            {categories.map(category => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedCategory === category
-                    ? 'bg-campaign-blue text-white'
-                    : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
 
           {/* Blog Posts Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
