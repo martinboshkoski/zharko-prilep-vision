@@ -117,7 +117,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Урбанизам",
-    image: "/images/youth-park-modern.jpg"
+    image: "/images/modern bus.png"
   },
   {
     id: 12,
@@ -231,7 +231,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: ["Вработување", "Технологија"],
-    image: "/images/teamwork.jpg"
+    image: "/images/hr marketplace.jpg"
   }
   
   
