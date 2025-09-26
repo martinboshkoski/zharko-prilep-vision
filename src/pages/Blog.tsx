@@ -12,18 +12,29 @@ const Blog = () => {
 
   // Extract all categories from both single category and categories array
   const categories = Array.from(new Set(
-    blogPosts.flatMap(post =>
-      post.categories ? post.categories : [post.category]
-    ).filter(Boolean)
+    blogPosts
+      .filter(post => post && (post.categories || post.category)) // Filter out undefined/null posts
+      .flatMap(post => {
+        if (post.categories && Array.isArray(post.categories)) {
+          return post.categories;
+        } else if (post.category) {
+          return [post.category];
+        }
+        return [];
+      }).filter(Boolean)
   ));
 
   const filteredPosts = selectedCategory
-    ? blogPosts.filter(post =>
-        post.categories
-          ? post.categories.includes(selectedCategory)
-          : post.category === selectedCategory
-      )
-    : blogPosts;
+    ? blogPosts.filter(post => {
+        if (!post) return false; // Filter out undefined/null posts
+        if (post.categories && Array.isArray(post.categories)) {
+          return post.categories.includes(selectedCategory);
+        } else if (post.category) {
+          return post.category === selectedCategory;
+        }
+        return false;
+      })
+    : blogPosts.filter(post => post); // Filter out undefined/null posts
 
   return (
     <div className="min-h-screen bg-background">
@@ -93,9 +104,16 @@ const Blog = () => {
                     </div>
                     
                     <div className="flex flex-wrap gap-1 mb-2">
-                      {(post.categories || [post.category]).map((cat, index) => (
-                        <Badge key={index} className="w-fit">{cat}</Badge>
-                      ))}
+                      {(() => {
+                        if (post.categories && Array.isArray(post.categories)) {
+                          return post.categories.map((cat, index) => (
+                            <Badge key={index} className="w-fit">{cat}</Badge>
+                          ));
+                        } else if (post.category) {
+                          return <Badge className="w-fit">{post.category}</Badge>;
+                        }
+                        return null;
+                      })()}
                     </div>
                     
                     <CardTitle className="text-campaign-blue hover:text-campaign-blue-dark transition-colors">
@@ -108,7 +126,7 @@ const Blog = () => {
                   
                   <CardContent>
                     <div className="text-sm text-muted-foreground line-clamp-4">
-                      {post.content.substring(0, 150)}...
+                      {post.content && typeof post.content === 'string' ? post.content.substring(0, 150) + '...' : 'Нема достапен содржај...'}
                     </div>
                     <button className="mt-4 text-campaign-blue hover:text-campaign-blue-dark font-semibold transition-colors">
                       Прочитај повеќе →
