@@ -154,7 +154,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Управување",
-    image: "/images/government-management.jpg"
+    image: "/images/directors.jpg"
   },
   {
     id: 16,
@@ -176,7 +176,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: ["Спорт", "Младински програми"],
-    image: "/images/basketball-court-renovation.jpg"
+    image: "/images/An_outdoor_recreational_basketball_court_with_6_LED-sports-lighting.webp"
   }, 
   {
     id: 18,
@@ -187,7 +187,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Урбанизм",
-    image: "/images/underground-containers.jpg"
+    image: "/images/underground_garbage.png"
   },
   {
     id: 19,
@@ -198,7 +198,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: "Технологија",
-    image: "/images/public-lightning.jpg"
+    image: "/images/public lightning.jpg"
   }, 
   {
     id: 20,
@@ -220,7 +220,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: ["Екологија", "Транспорт"],
-    image: "/images/electric-vehicle-charging.jpg"
+    image: "/images/eletric cars.png"
   }, 
   {
     id: 22,
@@ -231,7 +231,7 @@ export const blogPosts = [
     date: "2025-09-29",
     author: "Жарко Бошкоски",
     category: ["Вработување", "Технологија"],
-    image: "/images/digital-job-platform.jpg"
+    image: "/images/teamwork.jpg"
   }
   
   
