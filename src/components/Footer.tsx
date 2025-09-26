@@ -2,7 +2,7 @@ import ldpLogo from '@/assets/ldp-logo-transparent.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-2">
+    <footer className="bg-background border-t text-foreground py-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center space-y-6">
           {/* Logo */}
@@ -18,15 +18,15 @@ const Footer = () => {
           </h3>
           
           {/* Tagline */}
-          <p className="text-center text-background/80 max-w-md">
+          <p className="text-center text-muted-foreground max-w-md">
             За модерен, зелен и транспарентен Прилеп
           </p>
           
           {/* Divider */}
-          <div className="w-full h-px bg-background/20"></div>
+          <div className="w-full h-px bg-border"></div>
           
           {/* Copyright */}
-          <div className="text-center text-sm text-background/60">
+          <div className="text-center text-sm text-muted-foreground">
             <p>© 2025 Жарко Бошкоски. Сите права се задржани.</p>
           </div>
         </div>

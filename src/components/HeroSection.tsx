@@ -37,7 +37,7 @@ const HeroSection = () => {
               Жарко Бошкоски
             </h1>
             
-            <h2 className="text-2xl lg:text-3xl font-semibold text-muted-foreground mb-8">
+            <h2 className="text-2xl lg:text-3xl font-semibold text-foreground/80 mb-8">
               Кандидат за Градоначалник на Град Прилеп
             </h2>
 
@@ -80,8 +80,8 @@ const HeroSection = () => {
             </div>
 
             <div className="space-y-4">
-              <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
-                Градоначалник кој ќе ги користи најновите технологии за транспарентност, 
+              <p className="text-lg text-foreground/80 max-w-xl mx-auto lg:mx-0">
+                Градоначалник кој ќе ги користи најновите технологии за транспарентност,
                 развој и подобар живот за сите граѓани на Прилеп.
               </p>
             </div>
@@ -91,10 +91,10 @@ const HeroSection = () => {
           <div className="flex justify-center lg:justify-end slide-up">
             <div className="relative">
               <div className="absolute inset-0 gradient-hero rounded-2xl transform rotate-3 opacity-20"></div>
-              <img 
+              <img
                 src={candidatePhoto}
                 alt="Жарко Бошкоски - Кандидат за Градоначалник"
-                className="relative z-10 w-80 h-96 object-cover rounded-2xl shadow-hero"
+                className="relative z-10 w-88 h-[26rem] object-cover rounded-2xl shadow-hero"
               />
               <div className="absolute -top-4 -right-4 w-20 h-20 bg-accent rounded-full opacity-20"></div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-campaign-blue-light rounded-full opacity-30"></div>
