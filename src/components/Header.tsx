@@ -45,6 +45,7 @@ const Header = () => {
     { id: 'ai-project', label: 'АИ Советник', type: 'scroll' },
     { id: 'about', label: 'За кандидатот', type: 'scroll' },
     { id: 'blog', label: 'Проекти', type: 'link', href: '/blog' },
+    { id: 'videos', label: 'Видеа', type: 'link', href: '/videos' },
     { id: 'contact', label: 'Контакт', type: 'scroll' },
   ];
 
