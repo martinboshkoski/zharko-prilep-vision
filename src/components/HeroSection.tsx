@@ -94,7 +94,7 @@ const HeroSection = () => {
               <img
                 src={candidatePhoto}
                 alt="Жарко Бошкоски - Кандидат за Градоначалник"
-                className="relative z-10 w-88 h-[26rem] object-cover rounded-2xl shadow-hero"
+                className="relative z-10 w-[26rem] h-[31rem] object-cover rounded-2xl shadow-hero"
               />
               <div className="absolute -top-4 -right-4 w-20 h-20 bg-accent rounded-full opacity-20"></div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-campaign-blue-light rounded-full opacity-30"></div>
