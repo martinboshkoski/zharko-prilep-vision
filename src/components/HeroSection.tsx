@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import candidatePhoto from '@/assets/candidate-campaign-poster.jpg';
+const candidatePhoto = '/images/zb_image-removebg-preview.png';
 import prilepBackground from '@/assets/prilep-background.jpg';
 
 const HeroSection = () => {
