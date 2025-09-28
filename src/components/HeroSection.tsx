@@ -21,16 +21,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative flex items-center justify-center overflow-hidden" style={{ height: 'fit-content', minHeight: '600px' }}>
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: `url(${prilepBackground})`,
-          backgroundPosition: 'center top',
-          backgroundSize: 'cover',
-          clipPath: 'inset(0 0 15% 0)'
-        }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{ backgroundImage: `url(${prilepBackground})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-campaign-blue/10 to-campaign-blue/20" />
       
