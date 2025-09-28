@@ -24,8 +24,13 @@ const HeroSection = () => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-top bg-no-repeat opacity-20"
-        style={{ backgroundImage: `url(${prilepBackground})` }}
+        className="absolute inset-0 bg-cover bg-no-repeat opacity-20"
+        style={{
+          backgroundImage: `url(${prilepBackground})`,
+          backgroundPosition: 'center top',
+          backgroundSize: 'cover',
+          clipPath: 'inset(0 0 15% 0)'
+        }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-campaign-blue/10 to-campaign-blue/20" />
       
