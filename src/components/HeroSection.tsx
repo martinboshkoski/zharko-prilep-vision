@@ -29,7 +29,7 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-campaign-blue/10 to-campaign-blue/20" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="text-center lg:text-left fade-in">
