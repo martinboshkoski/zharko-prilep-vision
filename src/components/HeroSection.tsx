@@ -23,8 +23,8 @@ const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+      <div
+        className="absolute inset-0 bg-cover bg-top bg-no-repeat opacity-20"
         style={{ backgroundImage: `url(${prilepBackground})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-campaign-blue/10 to-campaign-blue/20" />
@@ -92,7 +92,7 @@ const HeroSection = () => {
             <img
               src={candidatePhoto}
               alt="Жарко Бошкоски - Кандидат за Градоначалник"
-              className="w-[26rem] h-[31rem] object-cover"
+              className="w-[30rem] h-[36rem] object-cover object-top"
             />
           </div>
         </div>
