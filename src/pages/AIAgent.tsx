@@ -78,7 +78,7 @@ const AIAgent = () => {
         <meta property="og:url" content="https://zharko-prilep-vision.vercel.app/ai-agent" />
         <meta property="og:title" content="АИ Агент за Сите Граѓани на Прилеп | Жарко Бошкоски" />
         <meta property="og:description" content="Вештачки интелигентен агент кој ќе ги елиминира корупцијата и ќе ги забрза процесите. Најбрзото решение за транспарентен Прилеп." />
-        <meta property="og:image" content={`https://zharko-prilep-vision.vercel.app${aiAdvisorGovernmentImage}`} />
+        <meta property="og:image" content={`https://zharko-prilep-vision.vercel.app${aiAdvisorImage}`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Жарко Бошкоски - Кандидат за градоначалник" />
@@ -88,7 +88,7 @@ const AIAgent = () => {
         <meta name="twitter:url" content="https://zharko-prilep-vision.vercel.app/ai-agent" />
         <meta name="twitter:title" content="АИ Агент за Сите Граѓани на Прилеп | Жарко Бошкоски" />
         <meta name="twitter:description" content="Вештачки интелигентен агент кој ќе ги елиминира корупцијата и ќе ги забрза процесите. Најбрзото решение за транспарентен Прилеп." />
-        <meta name="twitter:image" content={`https://zharko-prilep-vision.vercel.app${aiAdvisorGovernmentImage}`} />
+        <meta name="twitter:image" content={`https://zharko-prilep-vision.vercel.app${aiAdvisorImage}`} />
       </Helmet>
       <Header />
 

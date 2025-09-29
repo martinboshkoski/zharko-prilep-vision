@@ -9,6 +9,9 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Check if we're on a page with dark background that needs light text
+  const isDarkBackground = location.pathname === '/ai-agent';
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -75,7 +78,7 @@ const Header = () => {
                 <Link
                   key={item.id}
                   to={item.href!}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                  className={`${isDarkBackground && !isScrolled ? 'text-white hover:text-campaign-yellow' : 'text-foreground hover:text-primary'} transition-colors duration-200 font-medium`}
                 >
                   {item.label}
                 </Link>
@@ -83,7 +86,7 @@ const Header = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                  className={`${isDarkBackground && !isScrolled ? 'text-white hover:text-campaign-yellow' : 'text-foreground hover:text-primary'} transition-colors duration-200 font-medium`}
                 >
                   {item.label}
                 </button>
@@ -95,7 +98,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-foreground hover:text-primary transition-colors"
+              className={`${isDarkBackground && !isScrolled ? 'text-white hover:text-campaign-yellow' : 'text-foreground hover:text-primary'} transition-colors`}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
