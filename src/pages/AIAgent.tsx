@@ -1,4 +1,5 @@
 import { Bot, Shield, Users, FileText, Eye, Scale, Clock, CheckCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import aiAdvisorImage from '@/assets/ai-advisor.jpg';
@@ -68,6 +69,27 @@ const AIAgent = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>АИ Агент за Сите Граѓани на Прилеп | Жарко Бошкоски</title>
+        <meta name="description" content="Вештачки интелигентен агент кој ќе ги елиминира корупцијата и ќе ги забрза процесите во општинската администрация. Најбрзото решение за транспарентен Прилеп." />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://zharko-prilep-vision.vercel.app/ai-agent" />
+        <meta property="og:title" content="АИ Агент за Сите Граѓани на Прилеп | Жарко Бошкоски" />
+        <meta property="og:description" content="Вештачки интелигентен агент кој ќе ги елиминира корупцијата и ќе ги забрза процесите. Најбрзото решение за транспарентен Прилеп." />
+        <meta property="og:image" content={`https://zharko-prilep-vision.vercel.app${aiAdvisorGovernmentImage}`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Жарко Бошкоски - Кандидат за градоначалник" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://zharko-prilep-vision.vercel.app/ai-agent" />
+        <meta name="twitter:title" content="АИ Агент за Сите Граѓани на Прилеп | Жарко Бошкоски" />
+        <meta name="twitter:description" content="Вештачки интелигентен агент кој ќе ги елиминира корупцијата и ќе ги забрза процесите. Најбрзото решение за транспарентен Прилеп." />
+        <meta name="twitter:image" content={`https://zharko-prilep-vision.vercel.app${aiAdvisorGovernmentImage}`} />
+      </Helmet>
       <Header />
 
       {/* Hero Section */}
