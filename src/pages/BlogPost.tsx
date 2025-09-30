@@ -38,13 +38,13 @@ const BlogPost = () => {
       // Update critical meta tags for Facebook
       updateOrCreateMetaTag('og:title', post.title);
       updateOrCreateMetaTag('og:description', post.excerpt);
-      updateOrCreateMetaTag('og:image', `https://zharko-prilep-vision.vercel.app${post.image}`);
-      updateOrCreateMetaTag('og:url', `https://zharko-prilep-vision.vercel.app/blog/${post.slug}`);
+      updateOrCreateMetaTag('og:image', `https://www.zharkozaprilep.mk${post.image}`);
+      updateOrCreateMetaTag('og:url', `https://www.zharkozaprilep.mk/blog/${post.slug}`);
       updateOrCreateMetaTag('og:type', 'article');
 
       // Twitter meta tags
       updateOrCreateMetaTag('twitter:card', 'summary_large_image', false);
-      updateOrCreateMetaTag('twitter:image', `https://zharko-prilep-vision.vercel.app${post.image}`, false);
+      updateOrCreateMetaTag('twitter:image', `https://www.zharkozaprilep.mk${post.image}`, false);
       updateOrCreateMetaTag('twitter:title', post.title, false);
       updateOrCreateMetaTag('twitter:description', post.excerpt, false);
     }
@@ -64,20 +64,20 @@ const BlogPost = () => {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://zharko-prilep-vision.vercel.app/blog/${post.slug}`} />
+        <meta property="og:url" content={`https://www.zharkozaprilep.mk/blog/${post.slug}`} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:image" content={`https://zharko-prilep-vision.vercel.app${post.image}`} />
+        <meta property="og:image" content={`https://www.zharkozaprilep.mk${post.image}`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Жарко Бошкоски - Кандидат за градоначалник" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={`https://zharko-prilep-vision.vercel.app/blog/${post.slug}`} />
+        <meta name="twitter:url" content={`https://www.zharkozaprilep.mk/blog/${post.slug}`} />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content={`https://zharko-prilep-vision.vercel.app${post.image}`} />
+        <meta name="twitter:image" content={`https://www.zharkozaprilep.mk${post.image}`} />
       </Helmet>
       <Header />
       <main className="pt-24 pb-16">
