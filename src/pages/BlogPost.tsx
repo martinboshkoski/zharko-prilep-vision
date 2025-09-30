@@ -61,7 +61,7 @@ const BlogPost = () => {
         <title>{post.title} - Жарко Бошкоски</title>
         <meta name="description" content={post.excerpt} />
         <meta name="author" content={post.author} />
-        <meta name="keywords" content={`${post.category}, Прилеп, Жарко Бошкоски, локални избори`} />
+        <meta name="keywords" content={`${Array.isArray(post.category) ? post.category.join(', ') : post.category}, Прилеп, Жарко Бошкоски, локални избори`} />
 
         {/* Open Graph / Facebook */}
         <meta property="fb:app_id" content="123456789012345" />
@@ -114,7 +114,14 @@ const BlogPost = () => {
               <span>{post.author}</span>
             </div>
             
-            <Badge className="mb-4">{post.category}</Badge>
+            <div className="mb-4 flex gap-2">
+              {Array.isArray(post.category) ?
+                post.category.map((cat, index) => (
+                  <Badge key={index}>{cat}</Badge>
+                )) :
+                <Badge>{post.category}</Badge>
+              }
+            </div>
             
             <h1 className="text-3xl lg:text-4xl font-bold text-campaign-blue mb-4">
               {post.title}
