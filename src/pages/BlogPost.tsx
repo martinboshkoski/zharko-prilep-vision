@@ -36,6 +36,7 @@ const BlogPost = () => {
       };
 
       // Update critical meta tags for Facebook
+      updateOrCreateMetaTag('fb:app_id', '123456789012345');
       updateOrCreateMetaTag('og:title', post.title);
       updateOrCreateMetaTag('og:description', post.excerpt);
       updateOrCreateMetaTag('og:image', `https://www.zharkozaprilep.mk${post.image}`);
@@ -63,6 +64,7 @@ const BlogPost = () => {
         <meta name="keywords" content={`${post.category}, Прилеп, Жарко Бошкоски, локални избори`} />
 
         {/* Open Graph / Facebook */}
+        <meta property="fb:app_id" content="123456789012345" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://www.zharkozaprilep.mk/blog/${post.slug}`} />
         <meta property="og:title" content={post.title} />
@@ -71,6 +73,9 @@ const BlogPost = () => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Жарко Бошкоски - Кандидат за градоначалник" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href={`https://www.zharkozaprilep.mk/blog/${post.slug}`} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
