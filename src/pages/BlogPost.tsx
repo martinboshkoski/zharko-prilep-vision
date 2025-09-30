@@ -1,5 +1,6 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
@@ -12,58 +13,6 @@ const BlogPost = () => {
   
   const post = blogPosts.find(p => p.slug === slug);
 
-  // SEO Meta tags for social sharing
-  useEffect(() => {
-    if (post) {
-      // Update page title
-      document.title = `${post.title} - Жарко Бошкоски`;
-      
-      // Create or update meta tags
-      const updateMetaTag = (property: string, content: string) => {
-        let meta = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement;
-        if (!meta) {
-          meta = document.createElement('meta');
-          meta.setAttribute('property', property);
-          document.head.appendChild(meta);
-        }
-        meta.content = content;
-      };
-
-      const updateNameMetaTag = (name: string, content: string) => {
-        let meta = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
-        if (!meta) {
-          meta = document.createElement('meta');
-          meta.setAttribute('name', name);
-          document.head.appendChild(meta);
-        }
-        meta.content = content;
-      };
-
-      // Open Graph tags for Facebook
-      updateMetaTag('og:title', post.title);
-      updateMetaTag('og:description', post.excerpt);
-      updateMetaTag('og:image', `${window.location.origin}${post.image}`);
-      updateMetaTag('og:url', window.location.href);
-      updateMetaTag('og:type', 'article');
-      updateMetaTag('og:site_name', 'Жарко Бошкоски - Кандидат за градоначалник');
-
-      // Twitter Card tags
-      updateNameMetaTag('twitter:card', 'summary_large_image');
-      updateNameMetaTag('twitter:title', post.title);
-      updateNameMetaTag('twitter:description', post.excerpt);
-      updateNameMetaTag('twitter:image', `${window.location.origin}${post.image}`);
-
-      // Additional meta tags
-      updateNameMetaTag('description', post.excerpt);
-      updateNameMetaTag('author', post.author);
-      updateNameMetaTag('keywords', `${post.category}, Прилеп, Жарко Бошкоски, локални избори`);
-    }
-
-    return () => {
-      // Reset title when component unmounts
-      document.title = 'Жарко Бошкоски - Кандидат за градоначалник на Град Прилеп';
-    };
-  }, [post]);
 
   if (!post) {
     return <Navigate to="/blog" replace />;
@@ -71,6 +20,29 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{post.title} - Жарко Бошкоски</title>
+        <meta name="description" content={post.excerpt} />
+        <meta name="author" content={post.author} />
+        <meta name="keywords" content={`${post.category}, Прилеп, Жарко Бошкоски, локални избори`} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://zharko-prilep-vision.vercel.app/blog/${post.slug}`} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={`https://zharko-prilep-vision.vercel.app${post.image}`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Жарко Бошкоски - Кандидат за градоначалник" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={`https://zharko-prilep-vision.vercel.app/blog/${post.slug}`} />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={`https://zharko-prilep-vision.vercel.app${post.image}`} />
+      </Helmet>
       <Header />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
