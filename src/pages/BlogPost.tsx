@@ -13,6 +13,42 @@ const BlogPost = () => {
   
   const post = blogPosts.find(p => p.slug === slug);
 
+  // Additional DOM manipulation for Facebook crawler compatibility
+  useEffect(() => {
+    if (post) {
+      // Force update meta tags in DOM for Facebook crawler
+      const updateOrCreateMetaTag = (property: string, content: string, isProperty = true) => {
+        const selector = isProperty ? `meta[property="${property}"]` : `meta[name="${property}"]`;
+        let meta = document.querySelector(selector) as HTMLMetaElement;
+
+        if (meta) {
+          meta.content = content;
+        } else {
+          meta = document.createElement('meta');
+          if (isProperty) {
+            meta.setAttribute('property', property);
+          } else {
+            meta.setAttribute('name', property);
+          }
+          meta.content = content;
+          document.head.appendChild(meta);
+        }
+      };
+
+      // Update critical meta tags for Facebook
+      updateOrCreateMetaTag('og:title', post.title);
+      updateOrCreateMetaTag('og:description', post.excerpt);
+      updateOrCreateMetaTag('og:image', `https://zharko-prilep-vision.vercel.app${post.image}`);
+      updateOrCreateMetaTag('og:url', `https://zharko-prilep-vision.vercel.app/blog/${post.slug}`);
+      updateOrCreateMetaTag('og:type', 'article');
+
+      // Twitter meta tags
+      updateOrCreateMetaTag('twitter:card', 'summary_large_image', false);
+      updateOrCreateMetaTag('twitter:image', `https://zharko-prilep-vision.vercel.app${post.image}`, false);
+      updateOrCreateMetaTag('twitter:title', post.title, false);
+      updateOrCreateMetaTag('twitter:description', post.excerpt, false);
+    }
+  }, [post]);
 
   if (!post) {
     return <Navigate to="/blog" replace />;
