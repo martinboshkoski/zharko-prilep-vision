@@ -11,14 +11,38 @@ const Videos = () => {
       title: "Жарко Бошкоски - Визија за Прилеп",
       description: "Запознајте се со визијата и плановите за развој на нашиот град",
       videoId: "2FPty-sdlHw", // YouTube video ID
+      platform: "youtube",
       category: "Кампања",
       date: "2025-09-29",
+      author: "Жарко Бошкоски"
+    },
+    {
+      id: 2,
+      title: "Жарко Бошкоски - Промоција на кампањата",
+      description: "Гледајте го промотивното видео од кампањата за градоначалник на Прилеп",
+      videoId: "2021937671949629", // Facebook video ID
+      platform: "facebook",
+      category: "Кампања",
+      date: "2025-10-01",
       author: "Жарко Бошкоски"
     }
   ];
 
   const getYouTubeEmbedUrl = (videoId: string) => {
     return `https://www.youtube.com/embed/${videoId}`;
+  };
+
+  const getFacebookEmbedUrl = (videoId: string) => {
+    return `https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D${videoId}&show_text=false&width=560&height=315&appId`;
+  };
+
+  const getEmbedUrl = (video: any) => {
+    if (video.platform === "youtube") {
+      return getYouTubeEmbedUrl(video.videoId);
+    } else if (video.platform === "facebook") {
+      return getFacebookEmbedUrl(video.videoId);
+    }
+    return "";
   };
 
   return (
@@ -46,7 +70,7 @@ const Videos = () => {
               <Card key={video.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="aspect-video bg-gray-100">
                   <iframe
-                    src={getYouTubeEmbedUrl(video.videoId)}
+                    src={getEmbedUrl(video)}
                     title={video.title}
                     className="w-full h-full"
                     frameBorder="0"
@@ -77,7 +101,7 @@ const Videos = () => {
                 <CardContent>
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Play className="w-4 h-4 mr-2" />
-                    <span>YouTube видео</span>
+                    <span>{video.platform === "youtube" ? "YouTube видео" : "Facebook видео"}</span>
                   </div>
                 </CardContent>
               </Card>
