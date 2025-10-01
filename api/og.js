@@ -227,6 +227,16 @@ export default function handler(request) {
       "author": "Жарко Бошкоски",
       "category": ["Транспорт", "Екологија"],
       "image": "/images/eletricBikesAndScooters.png"
+    },
+    {
+      "id": 25,
+      "slug": "cistenje-na-opstinska-zgrada-prilep",
+      "title": "Почиствување и обнова на општинската зграда во Прилеп",
+      "excerpt": "Општината ќе ја врати убавината на општинската зграда – исчистена од боите предизвикани од протестите, уште во првите 30 дена на владеење.",
+      "date": "2025-10-01",
+      "author": "Жарко Бошкоски",
+      "category": ["Урбанизм", "Културно наследство"],
+      "image": "/images/city building cleaning.png"
     }
   ];
   
