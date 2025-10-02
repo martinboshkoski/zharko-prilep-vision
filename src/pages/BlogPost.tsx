@@ -181,7 +181,7 @@ const BlogPost = () => {
               {blogPosts
                 .filter(p => p.id !== post.id) // Exclude current post
                 .sort(() => 0.5 - Math.random()) // Randomize
-                .slice(0, 5) // Take 5 posts
+                .slice(0, 6) // Take 6 posts
                 .map((suggestedPost) => (
                   <Link
                     key={suggestedPost.id}
