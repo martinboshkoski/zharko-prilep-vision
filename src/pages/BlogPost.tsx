@@ -166,6 +166,87 @@ const BlogPost = () => {
             </div>
           </div>
 
+          {/* Suggested Posts */}
+          <div className="mt-16 pt-8 border-t border-border">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-campaign-blue mb-2">
+                Прочитајте исто така
+              </h3>
+              <p className="text-muted-foreground">
+                Други проекти и идеи што можат да ве интересираат
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {blogPosts
+                .filter(p => p.id !== post.id) // Exclude current post
+                .sort(() => 0.5 - Math.random()) // Randomize
+                .slice(0, 5) // Take 5 posts
+                .map((suggestedPost) => (
+                  <Link
+                    key={suggestedPost.id}
+                    to={`/blog/${suggestedPost.slug}`}
+                    className="group block bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-campaign-blue/20 transition-all duration-300 overflow-hidden"
+                  >
+                    {/* Image */}
+                    <div className="aspect-video bg-gradient-to-br from-campaign-blue/10 to-campaign-blue/5 overflow-hidden">
+                      <img
+                        src={suggestedPost.image}
+                        alt={suggestedPost.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-5">
+                      {/* Category Badge */}
+                      <div className="mb-3">
+                        {Array.isArray(suggestedPost.category) ? (
+                          <div className="flex flex-wrap gap-1">
+                            {suggestedPost.category.slice(0, 2).map((cat, index) => (
+                              <span
+                                key={index}
+                                className="px-2 py-1 bg-campaign-blue/10 text-campaign-blue text-xs font-medium rounded-full"
+                              >
+                                {cat}
+                              </span>
+                            ))}
+                          </div>
+                        ) : (
+                          <span className="px-2 py-1 bg-campaign-blue/10 text-campaign-blue text-xs font-medium rounded-full">
+                            {suggestedPost.category}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Title */}
+                      <h4 className="text-lg font-semibold text-gray-900 group-hover:text-campaign-blue transition-colors duration-200 line-clamp-2 mb-2">
+                        {suggestedPost.title}
+                      </h4>
+
+                      {/* Excerpt */}
+                      <p className="text-gray-600 text-sm line-clamp-3 mb-4">
+                        {suggestedPost.excerpt}
+                      </p>
+
+                      {/* Footer */}
+                      <div className="flex items-center justify-between text-xs text-gray-500">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          <span>{new Date(suggestedPost.date).toLocaleDateString('mk-MK')}</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-campaign-blue group-hover:text-campaign-blue-dark">
+                          <span>Прочитај повеќе</span>
+                          <ArrowLeft className="w-3 h-3 rotate-180 group-hover:translate-x-1 transition-transform duration-200" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+          </div>
+
           {/* Back to Blog */}
           <div className="mt-12 text-center">
             <Link 
