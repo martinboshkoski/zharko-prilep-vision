@@ -49,7 +49,6 @@ const Header = () => {
     { id: 'about', label: 'За кандидатот', type: 'scroll' },
     { id: 'blog', label: 'Проекти', type: 'link', href: '/blog' },
     { id: 'videos', label: 'Видеа', type: 'link', href: '/videos' },
-    { id: 'lawyer-service', label: 'Правни услуги', type: 'link', href: '/services/lawyer' },
     { id: 'contact', label: 'Контакт', type: 'scroll' },
   ];
 
