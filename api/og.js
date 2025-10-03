@@ -257,6 +257,16 @@ export default function handler(request) {
       "author": "Жарко Бошкоски",
       "category": ["Култура", "Туризам", "Забава"],
       "image": "/images/pivofest.png"
+    },
+    {
+      "id": 28,
+      "slug": "nacionalen-biznis-roadshow-prilep",
+      "title": "Национален Бизнис Roadshow – Прилеп како нова инвестициска дестинација",
+      "excerpt": "Жарко Бошкоски ќе организира национален „roadshow" за привлекување инвестиции, каде директно ќе ги поврзе најголемите компании во Македонија со можностите за развој во Прилеп.",
+      "date": "2025-10-02",
+      "author": "Жарко Бошкоски",
+      "category": ["Економија", "Инвестиции", "Вработување"],
+      "image": "/images/business-roadshow.jpg"
     }
   ];
   
