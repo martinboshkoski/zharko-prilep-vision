@@ -166,7 +166,7 @@ export default function handler(request) {
       "date": "2025-09-29",
       "author": "Жарко Бошкоски",
       "category": "Технологија",
-      "image": "/images/public lightning.jpg"
+      "image": "/images/public-lightning.jpg"
     },
     {
       "id": 19,
