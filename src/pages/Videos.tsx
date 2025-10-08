@@ -28,8 +28,8 @@ const Videos = () => {
     },
     {
       id: 3,
-      title: "Нов видео материјал",
-      description: "Видео од кампањата",
+      title: "Топ Тема - Дебата на кандидати за градоначалник на Прилеп",
+      description: "Гледајте ја дебатата меѓу кандидатите за градоначалник на Прилеп во емисијата Топ Тема",
       videoId: "LUeGkjqLOE4", // YouTube video ID
       platform: "youtube",
       category: "Кампања",
