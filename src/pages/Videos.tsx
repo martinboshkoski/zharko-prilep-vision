@@ -25,6 +25,16 @@ const Videos = () => {
       category: "Кампања",
       date: "2025-10-01",
       author: "Жарко Бошкоски"
+    },
+    {
+      id: 3,
+      title: "Нов видео материјал",
+      description: "Видео од кампањата",
+      videoId: "LUeGkjqLOE4", // YouTube video ID
+      platform: "youtube",
+      category: "Кампања",
+      date: "2025-10-08",
+      author: "Жарко Бошкоски"
     }
   ];
 
