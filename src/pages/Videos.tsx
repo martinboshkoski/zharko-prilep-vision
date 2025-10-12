@@ -56,6 +56,10 @@ const Videos = () => {
     return `https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D${videoId}&show_text=false&width=560&height=315&appId`;
   };
 
+  const getMRTVideoUrl = (videoId: string) => {
+    return `https://play.mrt.com.mk/play/${videoId}`;
+  };
+
   const getEmbedUrl = (video: any) => {
     if (video.platform === "youtube") {
       return getYouTubeEmbedUrl(video.videoId);
@@ -88,16 +92,33 @@ const Videos = () => {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
             {videos.map((video) => (
               <Card key={video.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-video bg-gray-100">
-                  <iframe
-                    src={getEmbedUrl(video)}
-                    title={video.title}
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
+                {video.platform === "mrt" ? (
+                  <a
+                    href={getMRTVideoUrl(video.videoId)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block aspect-video bg-gradient-to-br from-red-900 to-red-700 relative group"
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <Play className="w-20 h-20 text-white mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                        <p className="text-white font-semibold text-lg">Гледајте на МРТ</p>
+                        <p className="text-white/80 text-sm mt-1">Кликнете за отворање</p>
+                      </div>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="aspect-video bg-gray-100">
+                    <iframe
+                      src={getEmbedUrl(video)}
+                      title={video.title}
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                )}
 
                 <CardHeader>
                   <div className="flex items-center text-sm text-muted-foreground mb-2">
@@ -121,7 +142,11 @@ const Videos = () => {
                 <CardContent>
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Play className="w-4 h-4 mr-2" />
-                    <span>{video.platform === "youtube" ? "YouTube видео" : "Facebook видео"}</span>
+                    <span>
+                      {video.platform === "youtube" ? "YouTube видео" :
+                       video.platform === "facebook" ? "Facebook видео" :
+                       "МРТ видео"}
+                    </span>
                   </div>
                 </CardContent>
               </Card>
